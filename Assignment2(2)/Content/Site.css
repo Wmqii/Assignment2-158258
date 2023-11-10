@@ -1,0 +1,149 @@
+﻿/* Set padding to keep content from hitting the edges */
+.body-content {
+    margin-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.navbar {
+    background-color: deepskyblue;
+    border-radius: 0px; /*圆角*/
+    padding: 10px 50px;
+    margin-block-end: -15px;
+}
+
+section#main {
+    clear: left; /* float the main section on the left margin once the left margin has been
+                clear of previously floated objects;*/
+    margin-left: 5%; /* set the size of the left margin to 21 %;*/
+    margin-top: 20px; /* set the size of the top margin to 20 pixels*/
+    width: 90%; /*set the width of the main section to 49% of the page body.*/
+}
+
+section > h1 {
+    margin-left: 50%;
+    color: rgb(189, 131, 82); /* set the text color to the value (189, 131, 82);*/
+    font-size: 180%;
+    font-weight: normal; /*set the font size to 180% with normal weight*/
+    letter-spacing: 5px; /*set the letter spacing to 5 pixels.*/
+}
+
+section#main p { /*Set the margins of paragraphs within the main section to 15 pixels*/
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+section#main aside {
+    border: 3px solid rgb(149, 91, 42);
+    color: rgb(149, 91, 42);
+    float: right;
+    margin: 10px;
+    width: 40%;
+    border-radius: 0px;
+}
+    section#main aside img {
+        width:100%;
+        height:130%;
+    }
+
+    section#main aside p {
+        font-size: 90%; /* set the font size to 90%*/
+        margin: 20px; /* set the margin to 20 pixels*/
+    }
+
+footer.footer {
+    background-color: #EE9A49;
+    height: 200px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-left: 100px;
+    position: relative;
+}
+
+.footer-image {
+    position: absolute; /* 设置图片为绝对定位 */
+    bottom: 0; /* 将图片定位到底部 */
+    right: 0; /* 将图片定位到右侧 */
+    margin-bottom: 0px; /* 可选：添加一些底部边距 */
+    margin-right: 0px; /* 可选：添加一些右侧边距 */
+    width: 40%;
+    height: auto;
+}
+/*首页第一个标题*/
+h1.aboutus {
+    margin-left: 25%; /* 将标题向右移动 20 像素 */
+    font-family: Comic Sans MS;
+    font-weight: bold;
+}
+
+/*首页文字*/
+.duanluo {
+    font-family: Bahnschrift;
+    font-size: 120%
+}
+
+/*首页第二个标题*/
+h1.photo {
+    margin-left: 34%; /* 将标题向右移动 20 像素 */
+    font-family: Comic Sans MS;
+    font-weight: bold;
+}
+
+/*首页下面排列的图片们*/
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* 在每个元素之间添加空白 */
+}
+
+    .gallery img {
+        margin-bottom: 20px; /* 添加底部间隔 */
+        border-radius: 4%; /*圆角*/
+    }
+
+/*标题下面的线*/
+.hr1 {
+    margin: 20px auto;
+    border: none;
+    border-top: 1px solid black;
+}
+
+
+/*分页*/
+.pagination {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+    .pagination li {
+        margin: 5px;
+    }
+
+        .pagination li a {
+            display: block;
+            padding: 10px;
+            border: 2px solid #008080;
+            border-radius: 5px;
+        }
+/*分页数字的下划线*/
+.page-item a {
+    text-decoration: none;
+}
+

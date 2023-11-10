@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+
+<style>
+
+        .text-box {
+            position: relative;
+            top: 50%; /* 将文本框垂直居中 */
+            left: 50%; /* 将文本框水平居中 */
+            transform: translate(-50%, -50%); /* 通过transform属性实现水平垂直居中 */
+            background-color: rgba(255, 255, 255, 0.5); /* 半透明背景 */
+            padding: 20px;
+            text-align: center;
+            margin-top:25%;
+        }
+    body {
+        background-color: #FFDEAD;
+    }
+    .biaoti {
+        text-align:center;
+    }
+        .biaoti p {
+            font-size: 130%;
+            font-family: Bahnschrift;
+        }
+    .button {
+        background-color: #EE9A49;
+        color: brown;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        border-radius: 5px;
+        font-size: 110%;
+        font-family: Bahnschrift;
+    }
+      
+    </style>
+
+<body>
+    <div class="biaoti">
+        <br />
+        <h2 style="font-family:Comic Sans MS;">Contact us:</h2>
+        <p>If you have questions or suggestions, please send them to us.</p>
+    </div>
+        <div class="text-box">
+
+            <form action="/submit_feedback" method="post">
+
+                <label for="name">Name: </label><br>
+                <input type="text" id="name" name="name"><br>
+                <label for="inquiry">Message: </label><br>
+                <textarea id="inquiry" name="inquiry" rows="4" cols="50"></textarea><br>
+                <label for="feedback">Idea: </label><br>
+                <textarea id="feedback" name="feedback" rows="4" cols="50"></textarea><br><br>
+                <input class="button" type="button" value="click" onclick="msg()" />
+          </form>
+    </div>
+</body>

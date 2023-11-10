@@ -1,0 +1,181 @@
+﻿@model IEnumerable<Assignment2_2_.Models.Category>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<style>
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 20px;
+    }
+
+    .grid-item {
+        text-align: center;
+        padding: 15px;
+        border: 1px solid #ccc;
+        transition: transform 0.3s ease;
+        background-color: #EECFA1;
+    }
+
+        .grid-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+    body {
+        background-color: #FFDEAD;
+    }
+    div.gezi {
+        padding: 5px;
+        background-color: #CDB38B;
+        text-align: center;
+        font-family: French Script MT;
+        font-size: 200%;
+        margin: 1% -10%;
+    }
+    div.gezi p {
+        margin: 10px auto;
+
+    }
+
+
+    .image-and-text {
+        display: flex; /* 使用flex布局 */
+        align-items: center; /* 垂直居中对齐 */
+        border-bottom: 2px solid #CD6600 ; /* 黄色下划线 */
+        padding-bottom: 5px; /* 下边距 */
+        margin-top: 2%;
+        font-family: Bahnschrift;
+        font-size: 110%;
+    }
+
+        .image-and-text img {
+            max-width: 100%; /* 图片最大宽度为容器的100% */
+            margin-right: 20px; /* 图片右侧留出一定的间距 */
+            width: 20%;
+            height: auto;
+            border-radius: 4%;/*圆角*/
+        }
+    div.all {
+        width: 50%;
+        margin: 5px 0;
+    }
+    .updown {
+        width: 50%;
+    }
+    div.h5p {
+        background: #EE9A49;
+    }
+
+        .updown img {
+            display: block;  /*让图片独占一行 */
+            width: 100%;
+            height: auto;
+        }
+        .updown p {
+            
+            font-family: Bahnschrift;
+            font-size: 90%
+        }
+        .updown h5 {
+            font-family: Bahnschrift;
+            text-align: center;
+        } 
+    div.row {
+        margin: 50px auto;
+    }
+    h4 {
+        font-family: Comic Sans MS;
+        font-weight: bold;
+        text-align: center;
+        color: rgb(189, 131, 82);
+    }
+    h2 {
+        font-family: Comic Sans MS;
+        font-weight: bold;
+        text-align: center;
+        color: rgb(189, 131, 82);
+    }
+    .hr1 {
+        margin: 20px auto;
+        border: none;
+        border-top: 1px solid black;
+    }
+</style>
+<body>
+    <div class="two  grid-item1">
+        <div class="row">
+            <div class="all col-md-6">
+                <h4>Pet World News</h4><br />
+                <div class="image-and-text">
+                    <img src="~/Content/Images/小羊2.jpg" alt="Image 1">
+                    <p>On July 3, the 2023 Pet Industry New Consumption Summit was held in Beijing.</p>
+                </div>
+                <div class="image-and-text">
+                    <img src="~/Content/Images/仓鼠2.jpg" alt="Image 1">
+                    <p>The 10th International Pet Products Exhibition, a pet world event, has landed in Guangzhou for a limited time, and pet owners are coming to participate in it!</p>
+                </div>
+                <div class="image-and-text">
+                    <img src="~/Content/Images/小猫2.jpg" alt="Image 1">
+                    <p>After two years, the ChengYe pet family carnival opened in Qionglai, people and pets run together, and the pet games are waiting for you!</p>
+                </div>
+            </div>
+
+            <div class="updown col-md-6">
+                <img src="~/Content/Images/小狗2.jpg" alt="Image 1">
+                <div class="h5p">
+                    <h5>Why do we have pets?</h5>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pets are defined as "animals and plants that are kept in captivity for spiritual purposes", and people pay more attention to satisfying their spiritual needs after solving the problem of food and clothing. Psychologist Harlow once proposed the concept of "contact comfort", that is, young mammals want to have physical contact with their mothers, and when their mothers are away, young mammals will look for things that feel most like their mothers. For us who have grown up, having a fluffy little animal has become the best choice, they meet our need for contact comfort and make us feel warm.</p>
+                </div>
+                </div>
+        </div>
+    </div>
+    <div class="gezi">
+        <p>Some lives always come to heal you</p>
+    </div><br />
+    <h2>Categories</h2>
+    <hr class="hr1" style="margin-left: 40%; width: 20%; "><br />
+    
+    <div class="grid">
+        <div class="grid-item">
+            <img width="230" height="220" src="~/Content/Images/熊猫.jpg" alt="图片1">
+            <br /><br />
+            @Html.ActionLink("Mammalia", "Index", "Pets", new { Category = "Mammalia" },
+new { style = "font-family: Bahnschrift; color: #FF4F01; font-size: 180%; text-decoration: none;" })
+        </div>
+        <div class="grid-item">
+            <img width="230" height="220" src="~/Content/Images/小鸟.jpg" alt="图片2">
+            <br /><br />
+            @Html.ActionLink("Aves", "Index", "Pets", new { Category = "Aves" },
+new { style = "font-family: Bahnschrift; color: #FF4F01; font-size: 180%; text-decoration: none;" })
+        </div>
+        <div class="grid-item">
+            <img width="230" height="220" src="~/Content/Images/小蛇次图1.jpg" alt="图片3">
+            <br /><br />
+            @Html.ActionLink("Reptiles", "Index", "Pets", new { Category = "Reptiles" },
+new { style = "font-family: Bahnschrift; color: #FF4F01; font-size: 180%; text-decoration: none;" })
+        </div>
+        <div class="grid-item">
+            <img width="230" height="220" src="~/Content/Images/小鱼次图.jpg" alt="图片4">
+            <br /><br />
+            @Html.ActionLink("Fish", "Index", "Pets", new { Category = "Fish" },
+new { style = "font-family: Bahnschrift; color: #FF4F01; font-size: 180%; text-decoration: none;" })
+        </div>
+        <div class="grid-item">
+            <img width="230" height="220" src="~/Content/Images/兰花螳螂次图.jpg" alt="图片5">
+            <br /><br />
+            @Html.ActionLink("Insects", "Index", "Pets", new { Category = "Insects" },
+new { style = "font-family: Bahnschrift; color: #FF4F01; font-size: 180%; text-decoration: none;" })
+        </div>
+        <div class="grid-item">
+            <img width="230" height="220" src="~/Content/Images/树蛙次图.jpg" alt="图片6">
+            <br /><br />
+            @Html.ActionLink("Amphibians", "Index", "Pets", new { Category = "Amphibians" },
+new { style = "font-family: Bahnschrift; color: #FF4F01; font-size: 180%; text-decoration: none;" })
+        </div>
+    </div>
+    <br />
+    @Html.ActionLink("Learn More", "Index", "Pets", null, new { style = "background-color: #EE9A49; color: brown; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; font-size:110%; font-family: Bahnschrift; margin-left:85%" })<br /><br />
+    <br /><br />
+</body>

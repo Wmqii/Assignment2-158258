@@ -1,0 +1,102 @@
+﻿
+@model Assignment2_2_.ViewModels.PetIndexViewModel
+@using PagedList.Mvc
+@{
+    ViewBag.Title = "Index";
+}
+<br />
+<h2 style="text-align: center; font-family: Comic Sans MS; ">All Kinds of Pets</h2>
+<br />
+<p class="toushang">
+    @(String.IsNullOrWhiteSpace (Model.Search) ? "Showing all" : "You search for "+ Model.Search+" found")
+    @Model.Pets.TotalItemCount pets
+</p>
+
+<style>
+    body {
+        background-color: #FFDEAD;
+    }
+
+    p.toushang {
+        margin-left: 10%;
+        font-family: Bahnschrift;
+        font-size: 120%;
+    }
+
+    div.guolv {
+        margin-left: 10%;
+        font-family: Bahnschrift;
+        font-size: 120%;
+    }
+
+    div.grid-item {
+        margin: 2% auto;
+        width: 80%;
+        border-radius: 20px;
+        background-color: #EECFA1;
+    }
+
+    .col-md-6 img {
+        width: 40%;
+        height: auto;
+        border-radius: 20px;
+    }
+
+    .col-md-6 p {
+        font-family: MV Boli;
+        font-size: 130%;
+    }
+</style>
+<body>
+    <div class="guolv">
+        <p>
+            @using (Html.BeginForm("Index", "Pets", FormMethod.Get))
+            {
+                <label>Filter by category:</label>
+                @Html.DropDownListFor(vm => vm.Category, Model.CatFilterItems, "All");
+                <input type="submit" value="Filter" />
+                <input type="hidden" name="Search" id="Search" value="@ViewBag.Search" />
+            }
+        </p>
+    </div>
+
+
+
+
+    <div class="pet">
+        @foreach (var item in Model.Pets)
+        {
+
+            <div class="grid-item">
+                <div class="row">
+                    <div class="col-md-6">
+                        @if (item.Name != null)
+                        {
+                            string imagePath = $"~/Content/Images/{item.Name.ToLower()}.jpg";
+                            <img class="images" src="@Url.Content(imagePath)" alt="@item.Name">
+                        }
+
+                    </div>
+                    <div class="col-md-6" id="@item.Category.Name">
+                        <p>
+
+                            Category: @Html.DisplayFor(modelItem => item.Category.Name)<br />
+                            Name: @Html.DisplayFor(modelItem => item.Name)<br />
+                            Price: ￥@Html.DisplayFor(modelItem => item.Price)<br />
+                            Lifetime: @Html.DisplayFor(modelItem => item.Lifetime) years<br />
+                            &rarr;@Html.ActionLink("Details", "Details", new { id = item.ID }, new { style = "text-decoration: none; color:black; " })
+                        </p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+</body>
+<div class="guolv">
+    Page@(Model.Pets.PageCount <Model.Pets.PageNumber ? 0 : Model.Pets.PageNumber) of @Model.Pets.PageCount ：
+    @Html.PagedListPager(Model.Pets, page => Url.Action("Index", new { category = Model.Category, Search = Model.Search, page }), new PagedListRenderOptions { UlElementClasses = new string[] { "pagination" }, LiElementClasses = new string[] { "page-item" } })
+</div>
+
+
+

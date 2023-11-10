@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - 我的 ASP.NET 应用程序</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+        <div class="container">
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="切换导航" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Category", "Index", "Categories", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Pet", "Index", "Pets", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+
+                </ul>
+                @*搜索框*@
+                @using (Html.BeginForm("Index", "Pets", FormMethod.Get, new { @class = "navbar-form navbar-left" }))
+                {
+                    <div class="form-group">
+                        <div class="input-group">
+                            <!-- 使用input group包裹搜索框和按钮 -->
+                            @Html.TextBox("Search", null, new { @class = "form-control", @placeholder = "" })
+                            <span class="input-group-btn" style="margin-left: 10px;">
+                                <!-- input group 按钮 -->
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </span>
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </nav>
+    <div><img width="100%" alt="Cycle Pathology" src="~/Content/Images/小狗首图.jpg" /></div>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+    <hr />
+    <footer class="footer">
+        <br />
+        <address class="address" style="color:#363636;">
+            E-mail: <a href="mailto:1647227344@qq.com" style="text-decoration: none; color: #363636; ">1647227344@qq.com</a><br>
+            Phone: <a href="tel:15028116888" style="text-decoration: none; color: #363636;">15028116888</a><br>
+            Written by Mengqi Wei 22009108.<br>
+            Visit us at: Hebei University of Technology<br>
+            China<br>
+
+        </address>
+        <p style="color:#363636;">&copy; @DateTime.Now.Year - Our Animal Friends</p>
+        <img src="~/Content/Images/小猫页脚.png" alt="浮动图片" class="footer-image">
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+
+
+

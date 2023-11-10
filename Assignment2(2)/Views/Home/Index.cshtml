@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<style>
+    body {
+        background-color: #FFDEAD;
+    }
+   
+</style>
+<body>
+    <main>
+        <section id="main">
+
+            <h1 class="aboutus">About us</h1>
+            <hr class="hr1" style="margin-left: 23%; width: 20%;">
+            <aside>
+                <div>
+                    <img alt="Cycle Pathology" src="~/Content/Images/首页例图.jpg" />
+                </div>
+            </aside>
+
+
+            <div class="duanluo">
+                <p text-align: justify;>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Understand the basic knowledge of pets, share pet anecdotes, exchange pet raising experiences, and enjoy the fun of pet raising. Pet home is a gathering place for pet owners and pet lovers, and the "pet-oriented" business and service concept has attracted more and more pet owners and pet lovers to join.<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pets are man's most loyal friends, and they will accompany you all your life and protect you until you die. Pets can enrich human life, and veterinary experts and biologists have found that touching pets can change mood, reduce illness and pain, and improve people's physical and mental function. A 1993 Harvard Health Survey showed that people with pets generally had lower blood pressure, a more stable heart rate, and a calmer state of mind.<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In recent years, with the continuous improvement of people's living standards, people have not only raised dogs and cats. Birds, rabbits, fish and other pets, and some people will also guinea pigs. Lizards, snakes and other wild animals are kept as pets. In the past, people kept dogs mainly to ensure safety and care for the home: cats were mainly to eliminate rodent infestations and protect food. And today, having a pet can be used as a companion to make life more fulfilling.
+                </p>
+            </div><br />
+
+            <section>
+                <h1 class="photo">Pet photo album</h1>
+                <hr class="hr1" style="margin-left: 32%; width: 35%; "><br />
+                <div class="gallery">
+                    <img width="200" height="180" src="~/Content/Images/小猫首图.jpg" alt="Image 1">
+                    <img width="200" height="180" src="~/Content/Images/刺猬首图.jpg" alt="Image 2">
+                    <img width="200" height="180" src="~/Content/Images/鱼首图.jpg" alt="Image 3">
+                    <img width="200" height="180" src="~/Content/Images/柯尔鸭首图.jpg" alt="Image 3">
+                    <img width="200" height="180" src="~/Content/Images/守宫首图.jpg" alt="Image 3">
+                    <img width="200" height="180" src="~/Content/Images/乌龟首图.jpg" alt="Image 3">
+                    <img width="200" height="180" src="~/Content/Images/仓鼠首图.jpg" alt="Image 3">
+                    <img width="200" height="180" src="~/Content/Images/柯基首图.jpg" alt="Image 3">
+                </div>
+            </section>
+        </section>
+        @Html.ActionLink("Learn More", "Index", "Categories", null, new { style = "background-color: #EE9A49; color: brown; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; font-size:110%; font-family: Bahnschrift; margin-left:85%" })<br /><br />
+        <br /><br />
+    </main>
+</body>
